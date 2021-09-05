@@ -19,7 +19,6 @@ describe('AppComponent', () => {
   it(`should have as title 'tz-list-of-users'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tz-list-of-users');
   });
 
   it('should render title', () => {

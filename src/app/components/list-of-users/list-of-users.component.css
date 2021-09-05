@@ -1,0 +1,62 @@
+.headerUsers {
+  margin: 2% 0 0 5%;
+  font-size: xx-large;
+}
+.listOfUsers {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 0px 0px 10px;
+}
+.itemUsers {
+  display: flex;
+  height: 100px;
+  width: calc(100% - 100px);
+  border: 0;
+  margin: 5px 0 5px 0px;
+  flex-direction: row;
+  align-items: center;
+  background: #00000000;
+  justify-content: space-between;
+}
+.itemUsersHover {
+  display: flex;
+  height: 100px;
+  width: calc(100% - 100px);
+  border: 0;
+  margin: 5px 0 5px 0px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.itemUsersName {
+  font-size: large;
+}
+.itemUsersPanelToDo {
+  display: flex;
+  flex-direction: row;
+}
+.itemUsersButton {
+  display: none;
+  margin: 0 25px 0 25px;
+  font-size: revert;
+  width: 75px;
+  cursor: pointer;
+}
+.itemUsersButtonHover {
+  margin: 0 25px 0 25px;
+  font-size: revert;
+  width: 75px;
+  cursor: pointer;
+}
+.delete {
+  background-color: #e66d6da8;
+  height: 20px;
+  padding: 5px 0 0 0;
+  border-radius: 10px;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+}

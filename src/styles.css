@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/*global styles*/
+body {
+  margin: 0;
+  background-color: #a6a0e094;
+  font: 15px sans-serif;
+}
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}

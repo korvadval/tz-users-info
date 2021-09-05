@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="loginPass">
+        <h2>{{param.header}}</h2>
+        <form (submit)="onSubmit(login.value,password.value)" class="formLoginPass">
+            <input
+                type="text" 
+                id="login"
+                placeholder="Почта"
+                #login                 
+            />
+            <input
+                type={{param.typeOfInput}} 
+                id="pass"
+                placeholder="Пароль" 
+                #password
+            />
+            <button class="buttonLogin" type="submit">{{param.button}}</button>
+        </form>
+        <p id="msg" class="error">{{param.err}}</p>
+    </div>
+</div>

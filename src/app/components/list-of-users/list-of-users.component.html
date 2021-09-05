@@ -1,0 +1,11 @@
+<div class="headerUsers">Список юзеров</div>
+<br>
+<div class="listOfUsers" *ngFor="let user of users">
+    <img class="avatar" src={{user.avatar}}/> 
+    <button class="itemUsers" (mouseenter)="onEnter(user.id)" (mouseleave)="onLeave(user.id)" routerLink="/userInfo" (click)="showUserInfo(user.id)">  
+        <div class="itemUsersName">{{user.name}}</div>
+        <div class="itemUsersPanelToDo">
+            <div id="{{'delete'+user.id}}" class="itemUsersButton delete"(click)="delete(user.id)">Удалить</div>                 
+        </div>
+    </button>
+</div>
