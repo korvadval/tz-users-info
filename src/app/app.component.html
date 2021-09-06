@@ -1,5 +1,5 @@
 <div class="header unselectable">
-    <span class="headerName">UserInfo</span>
+    <span class="headerName" routerLink="/">UserInfo</span>
     <div class="buttonsPanel">
         <div class="buttonsLeft">
             <div *ngIf=!isLogin class="button"
@@ -8,7 +8,7 @@
                  (click)="registerClick()">Регистрация</div>
         </div>
         <div class="buttonsRight">
-            <div *ngIf=isLogin class="button" (click)="exitClick()">Выход</div>
+            <div *ngIf=isLogin class="button"(click)="exitClick()"><span routerLink="/" >Выход</span></div>
         </div>
     </div>
 </div>

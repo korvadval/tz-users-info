@@ -5,18 +5,35 @@
   cursor: pointer;
   text-align: center;
 }
+.containerInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerEdit {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
 .userInfoMain {
   display: flex;
   flex-direction: row;
+  width: 80%;
 }
 .avatar {
   width: 200px;
+  border-style: inset;
+  border-width: 2px 0px 0px 2px;
+  border-radius: 10px 0px 0px 0px;
+  border-color: #67638c;
 }
 .userInfoContains {
-  width: 82%;
+  width: 80%;
   border-style: inset;
-  border-width: 3px;
-  border-radius: 0px 10px 10px 0px;
+  border-width: 2px 2px 0px 1px;
+  border-radius: 0px 10px 0px 0px;
+  border-color: #67638c;
 }
 .userInfoField {
   display: flex;
@@ -31,5 +48,31 @@ label {
   font-size: x-large;
 }
 .editButton {
-  width: 10px;
+  font-size: large;
+  border-width: 1px 2px 2px 2px;
+  border-radius: 0px 0px 10px 10px;
+  border-color: #67638c;
+}
+.editingField {
+  margin: 5px 0 5px 10px;
+}
+.editingFieldName {
+  font-size: large;
+}
+.editingButtonSave {
+  width: 182px;
+  font-size: large;
+  border-width: 1px 2px 2px 2px;
+  border-radius: 5px;
+  border-color: #67638c;
+  margin: 0 0 0 10px;
+  outline: 0;
+}
+.editingInput {
+  height: 20px;
+  width: 175px;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #67638c;
+  outline: 0;
 }

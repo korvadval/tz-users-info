@@ -15,17 +15,13 @@ export class UserInfoComponent implements OnInit {
     firstName:"",
     lastName:""
   }
-  needEdit:boolean=true
+  needEdit:boolean=false
   
   constructor() { }
   
   editClick(){
     this.needEdit=!this.needEdit
   }
-
-  onChange(value:string){
-  }
-
   ngOnInit(): void {
     Requirer.GetUser(this.id,(res: any) => {
       console.log(res.data)

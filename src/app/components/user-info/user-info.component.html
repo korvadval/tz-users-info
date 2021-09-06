@@ -1,33 +1,38 @@
-<div class="backButton unselectable" routerLink="/">назад</div>
-<div class="userInfoMain">
-    <img class="avatar" src={{user.avatar}}>
-    <div class="userInfoContains">
-        <div class="userInfoField">
-            <div class="userInfoFieldName">Имя: </div>
-            <label>{{user.firstName}}</label>
+<br>
+<div class="containerInfo">
+    <div class="userInfoMain">
+        <img class="avatar" src={{user.avatar}}>
+        <div class="userInfoContains">
+            <div class="userInfoField">
+                <div class="userInfoFieldName">Имя: </div>
+                <label>{{user.firstName}}</label>
+            </div>
+            <div class="userInfoField">
+                <div class="userInfoFieldName">Фамилия: </div>
+                <label>{{user.lastName}}</label>
+            </div>
+            <div class="userInfoField">
+                <div class="userInfoFieldName">Почта: </div>
+                <label>{{user.email}}</label>
+            </div>
         </div>
-        <div class="userInfoField">
-            <div class="userInfoFieldName">Фамилия: </div>
-            <label>{{user.lastName}}</label>
-        </div>
-        <div class="userInfoField">
-            <div class="userInfoFieldName">Почта: </div>
-            <label>{{user.email}}</label>
-        </div>
+    </div>
+    <div class="containerEdit">
+        <button class="editButton unselectable" (click)="editClick()">Редактировать</button>
+        <form *ngIf=needEdit>
+            <div class="editingField">
+                <div class="editingFieldName"> Имя: </div>
+                <input class="editingInput" [(ngModel)]="user.firstName" placeholder="name" name="firstName">
+            </div>    
+            <div class="editingField">
+                <div class="editingFieldName"> Фамилия: </div>
+                <input class="editingInput" [(ngModel)]="user.lastName" placeholder="name" name="lastName">
+            </div>    
+            <div class="editingField">
+                <div class="editingFieldName"> Почта: </div>
+                <input class="editingInput" [(ngModel)]="user.email" placeholder="name" name="email">
+            </div>
+            <button class="editingButtonSave">Сохранить</button>
+        </form>
     </div>
 </div>
-<div class="editButton unselectable" (click)="editClick()">Редактировать</div>
-<form *ngIf=needEdit class="editingForm">
-    <div class="editingField">
-        <div class="editingFieldName"> Имя: </div>
-        <input type="text" value={{user.firstName}} (keypress)="onChange(name.value)" #name />
-    </div>    
-    <div class="editingField">
-        <div class="editingFieldName"> Фамилия: </div>
-        <input type="text"  [(ngModel)]="user.lastName"/>
-    </div>    
-    <div class="editingField">
-        <div class="editingFieldName"> Почта: </div>
-        <input type="text" value={{user.email}}/>
-    </div>
-</form>
