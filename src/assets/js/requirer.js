@@ -131,7 +131,7 @@ function CreateUser(login,name,password,callback) {
 function EditUser(id,data,callback) {
   const options = {
     method: "PUT",
-    data:{"first_name":data.firstName,"last_name":data.lastName,"email":data.email,"avatar":data.avatar},
+    data: {"first_name":data.firstName,"last_name":data.lastName,"email":data.email,"avatar":data.avatar},
     url: "https://reqres.in/api/users/"+id
   }
   axios(options)

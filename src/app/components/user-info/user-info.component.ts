@@ -27,7 +27,7 @@ export class UserInfoComponent implements OnInit {
     this.user.email=email
     this.user.avatar=avatar
     
-    Requirer.EditUser(this.id,"a", (res:any)=>{
+    Requirer.EditUser(this.id,this.user, (res:any)=>{
         if(res.status==200){
           this.msg="Данные успенно изменены"
           let buf=document.getElementById("msg") as HTMLElement;
