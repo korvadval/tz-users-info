@@ -3,7 +3,7 @@
   font-size: xx-large;
 }
 .listOfUsers {
-  width: 100%;
+  width: calc(100% - 10px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,6 +29,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.showInfo {
+  width: 100%;
+  text-align: left;
 }
 .itemUsersName {
   font-size: large;
@@ -59,4 +63,30 @@
 .avatar {
   width: 100px;
   height: 100px;
+}
+.headerRes {
+  font-size: x-large;
+  margin: 0 0 0 5%;
+}
+.containerRes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.itemRes {
+  width: 120px;
+  margin: 0px 0px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bebbd6;
+}
+.itemResName {
+  font-size: medium;
+  font-weight: bold;
+}
+.itemResYear {
+  opacity: 0.8;
+  font-style: italic;
 }

@@ -16,15 +16,38 @@ export class UserInfoComponent implements OnInit {
     lastName:""
   }
   needEdit:boolean=false
-  
+  msg=""
+
   constructor() { }
-  
+
+  onSubmit(firstName:string,lastName:string,email:string,avatar:string){
+    this.needEdit=!this.needEdit
+    this.user.firstName=firstName
+    this.user.lastName=lastName
+    this.user.email=email
+    this.user.avatar=avatar
+    
+    Requirer.EditUser(this.id,"a", (res:any)=>{
+        if(res.status==200){
+          this.msg="Данные успенно изменены"
+          let buf=document.getElementById("msg") as HTMLElement;
+          buf.className="success"
+        }else{
+          this.msg="Ошибка при обновлении данных:"+res.status
+          let buf=document.getElementById("msg") as HTMLElement;
+          buf.className="error"
+        }
+    })
+  }
+
   editClick(){
     this.needEdit=!this.needEdit
+    this.msg=""
   }
+
   ngOnInit(): void {
     Requirer.GetUser(this.id,(res: any) => {
-      console.log(res.data)
+      //console.log(res.data)
       this.user={
         avatar:res.data.avatar,
         email:res.data.email,

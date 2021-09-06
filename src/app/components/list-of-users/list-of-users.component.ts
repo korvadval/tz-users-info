@@ -8,6 +8,7 @@ import Requirer  from 'src/assets/js/requirer.js'
 })
 export class ListOfUsersComponent implements OnInit {
   users:any=[]
+  resources:any=[]
   constructor() { }
   ngOnInit(): void {
     Requirer.GetListOfUsers(1,(res: any) => {
@@ -22,6 +23,24 @@ export class ListOfUsersComponent implements OnInit {
               avatar: el.avatar
             }
             this.users.push(user);
+          });
+        })
+      }
+    })
+    Requirer.GetResources(1,(res: any) => {
+      let totalPages=res.total_pages
+      for(let page=1; page<=totalPages; page++)
+      {
+        Requirer.GetResources(page,(res: any) => {
+          res.data.forEach((el: { id: any; name: string; pantone_value: string; year: any; }) => {
+            console.log(el)
+            let res={
+              id:el.id,
+              name: el.name,
+              pantone_value: el.pantone_value,
+              year:el.year
+            }
+            this.resources.push(res);
           });
         })
       }

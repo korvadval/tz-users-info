@@ -57,7 +57,7 @@ function GetListOfUsers(page, callback) {
 function DeleteUser(id, callback) {
   const options = {
     method: "DELETE",
-    url: "https://reqres.in/api/users/2"
+    url: "https://reqres.in/api/users/"+id
   }
   axios(options)
     .then(res => {
@@ -128,4 +128,23 @@ function CreateUser(login,name,password,callback) {
       } 
     });
 };
-export default {GetUser,GetListOfUsers,CheckLogin,RegisterUser,CreateUser,DeleteUser,GetResources};
+function EditUser(id,data,callback) {
+  const options = {
+    method: "PUT",
+    data:{"first_name":data.firstName,"last_name":data.lastName,"email":data.email,"avatar":data.avatar},
+    url: "https://reqres.in/api/users/"+id
+  }
+  axios(options)
+    .then(res => {
+        callback(res);
+    })
+    .catch(err => {
+      if (err.response) { 
+        callback("Проверьте данные")
+      } else if (err.request) { 
+        callback("Подключение не установлено")  
+      } 
+    });
+};
+
+export default {GetUser,GetListOfUsers,CheckLogin,RegisterUser,CreateUser,DeleteUser,GetResources,EditUser};

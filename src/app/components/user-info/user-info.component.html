@@ -19,20 +19,25 @@
     </div>
     <div class="containerEdit">
         <button class="editButton unselectable" (click)="editClick()">Редактировать</button>
-        <form *ngIf=needEdit>
+        <div class="success" id="msg">{{msg}}</div>
+        <form *ngIf=needEdit (submit)="onSubmit(firstName.value,lastName.value,email.value,avatar.value)">
             <div class="editingField">
                 <div class="editingFieldName"> Имя: </div>
-                <input class="editingInput" [(ngModel)]="user.firstName" placeholder="name" name="firstName">
+                <input class="editingInput" [(ngModel)]="user.firstName" placeholder="Имя" name="firstName" #firstName>
             </div>    
             <div class="editingField">
                 <div class="editingFieldName"> Фамилия: </div>
-                <input class="editingInput" [(ngModel)]="user.lastName" placeholder="name" name="lastName">
+                <input class="editingInput" [(ngModel)]="user.lastName" placeholder="Фамилия" name="lastName" #lastName>
             </div>    
             <div class="editingField">
                 <div class="editingFieldName"> Почта: </div>
-                <input class="editingInput" [(ngModel)]="user.email" placeholder="name" name="email">
+                <input class="editingInput" [(ngModel)]="user.email" placeholder="Почта" name="email" #email>
             </div>
-            <button class="editingButtonSave">Сохранить</button>
+            <div class="editingField">
+                <div class="editingFieldName"> Аватарка: </div>
+                <input class="editingInput" [(ngModel)]="user.avatar" placeholder="Аватарка" name="avatar" #avatar>
+            </div>
+            <button type="submit" class="editingButtonSave">Сохранить</button>
         </form>
     </div>
 </div>
